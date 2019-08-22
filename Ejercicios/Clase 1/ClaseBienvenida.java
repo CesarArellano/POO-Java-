@@ -6,6 +6,7 @@ public class ClaseBienvenida{
     MensajeSaludo Objeto2 = new MensajeSaludo();
       Objeto1.Saludos();
       Objeto2.Mensaje();
+      Objeto2.Mensaje2();
       Mensaje1 = "Hola César";
       System.out.println(Mensaje1);
   }
