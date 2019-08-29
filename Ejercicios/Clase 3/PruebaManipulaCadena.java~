@@ -1,0 +1,9 @@
+import javax.swing.JOptionPane;
+
+public class PruebaObtenerVentana {
+    public static void main (String[] args){
+	String datoentrada;
+	datoentrada = JOptionPane.showInputDialog("Ingresa un entero");
+	int k = Integer.parseInt(datoentrada);
+    }
+}

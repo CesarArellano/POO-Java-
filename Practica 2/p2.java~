@@ -1,0 +1,13 @@
+import javax.swing.JOptionPane;
+public class p2{
+    public static void main (String[] args){
+       Pescadores Pescador = new Pescadores();
+       String DatoEntrada;
+       int Pesc,Peces;
+       DatoEntrada = JOptionPane.showInputDialog("Ingrese número de pescadores");
+       Pesc = Integer.parseInt(DatoEntrada);
+       DatoEntrada = JOptionPane.showInputDialog("Ingrese el número de peces capturados");
+       Peces = Integer.parseInt(DatoEntrada);
+       Pescador.Calcular(Pesc,Peces);
+      }
+}
