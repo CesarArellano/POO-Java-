@@ -15,7 +15,7 @@ public class Practica2{
     Ecuacion.CalcularRecta(X1,X2,Y1,Y2);
     Pendiente = Ecuacion.getPendiente();
     Ordenada = Ecuacion.getOrdenada();
-    System.out.println("Ecuacion de la recta: y="+Pendiente+"x +"+Ordenada);
+    System.out.printf("Ecuacion de la recta: y=%f%+f\n",Pendiente,Ordenada);
     System.out.println("Su pendiente es: "+Pendiente);
     System.out.println("Corta al eje 'y' en: "+Ordenada);
   }
