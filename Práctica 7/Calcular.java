@@ -1,35 +1,74 @@
 public class Calcular
 {
-  double Media;
-  public void MediaAritmetica(int Numero[], int N)
-  {
-    for (int i=0; i<N; i++)
-      Media += Numero[i];
-    Media /= N;
-    System.out.println("Media aritmética: "+ Media);
-  }
-  public void MediaFrecuencias(int Numero[],int NewArray[], int Frecuencias[], int N)
-  {
-    int Acum;
-    for(int i =0; i < N; i++)
+    int Array[],NewArray[],Frequency[];
+    double Media;
+    public Calcular(int Numeros[],int N)
     {
-      Acum = 1;
-      for(int j =0; j < N; j++)
-      {
-        if(Numero[i]==Numero[j] && Acum!=0)
-        {
-          Acum += Numero[i];
-          NewArray[i] = Numero[i];
-          Numero[j]=0;
-        }
-
-      }
-
+      int i;
+      Array = new int [N+1];
+      NewArray = new int [N];
+      Frequency = new int [N];
+      for (i=0; i<N; i++)
+        Array[i]=Numeros[i];
+      Ordenar();
+      Array[N]=0;
     }
-  }
-  public void get_Tabla(int NewArray[], int Frecuencias[])
-  {
-    for (int i=0; i<N; i++)
-      System.out.println(NewArray[i]+" "+(Frecuencias[i]));
-  }
+    public void Ordenar()
+    {
+      int Temp;
+      for(int i=0; i<Array.length-1; i++)
+      {
+        for(int j=0; j<Array.length-1; j++)
+        {
+          if(Array[i] < Array[j])
+          {
+            Temp = Array[i];
+            Array[i] = Array[j];
+            Array[j] = Temp;
+          }          
+        }
+      }
+    }
+    public void MediaAritmetica()
+    {
+	   for (int i=0; i<Array.length-1; i++)
+	     Media += Array[i];
+	   Media /= Array.length-1;
+	   System.out.println("Media aritmética: "+ Media);
+    }
+
+    public int ConteoFrecuencias()
+    {
+      int Acum,k=0;
+      for(int i=0; i<Array.length; i++)
+      {
+        Acum=0;
+        for(int j=i; j<Array.length; j++)
+        {
+          if(Array[i] != Array[j])
+          {
+            NewArray[k] = Array[i];
+            Frequency[k] = Acum;            
+            k++;
+            i=j-1;
+            j=Array.length;
+          }          
+          else
+            Acum++;
+        }
+      }
+      return k;
+    }
+
+    public void MediaFrecuencias(int Cont)
+    {
+      double Sumatoria=0,Frecuencia=0;
+      for(int i =0; i<Cont; i++)
+      {
+        System.out.println("Numero: "+NewArray[i]+" Frecuencia: "+Frequency[i]);
+        Sumatoria += NewArray[i]*Frequency[i];
+        Frecuencia += Frequency[i]; 
+      }
+      System.out.println("Media con frecuencias: "+(Sumatoria/Frecuencia));
+    }
 }
