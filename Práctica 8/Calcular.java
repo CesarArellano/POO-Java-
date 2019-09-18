@@ -71,6 +71,7 @@ public class Calcular
       }
       System.out.println("Media con frecuencias: "+(Sumatoria/Frecuencia));
     }
+    
     public void Mediana()
     {
       int Pos,Pre,Tamanio;
