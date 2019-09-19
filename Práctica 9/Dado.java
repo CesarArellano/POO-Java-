@@ -9,11 +9,8 @@ public class Dado
   public int VerificarNum(int Num)
   {
     if(Num==NumeroGenerado)
-    {
       Atinar++;
-      System.out.println("Acertó");      
-    }
-
+    System.out.println("El número generado es: "+NumeroGenerado);
     return Atinar;
   }
 }
