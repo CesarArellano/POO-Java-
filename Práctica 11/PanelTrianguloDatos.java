@@ -6,23 +6,24 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class PanelCuadradoDatos extends JPanel
+public class PanelTrianguloDatos extends JPanel
 {
-  static JTextField Lado;
+  static JTextField Base,Altura;
   static JButton Area, Volumen;
-  PanelCuadradoDatos()
+  PanelTrianguloDatos()
   {
     setLayout(new GridLayout(4,2));
     add(new JLabel(""));
     add(new JLabel(""));
-    add(new JLabel("LADO:",SwingConstants.CENTER));
-    Lado = new JTextField("",3);
-    add(Lado);
+    Base = new JTextField("",3);
+    Altura = new JTextField("",3);
     Area = new JButton("Área");
     Volumen = new JButton("Volumen");
+    add(Base);
+    add(Altura);
+    add(new JLabel("Base"));
+    add(new JLabel("Altura"));
     add(Area);
     add(Volumen);
-    add(new JLabel(""));
-    add(new JLabel(""));
   }
 }

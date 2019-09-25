@@ -4,5 +4,6 @@ public class Principal
   {
     Frame Ventana = new Frame();
     Ventana.setVisible(true);
+    System.out.println("Cesar");
   }
 }
