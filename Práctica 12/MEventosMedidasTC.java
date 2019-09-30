@@ -10,10 +10,10 @@ public class MEventosMedidasTC implements ActionListener
 	{
 		if(Evento.getSource() == PanelIngDatos.Imprimir)
 		{
-			//Remove all
 			try
 			{
-				int Numero1 = Integer.parseInt(PanelIngDatos.NumValores.getText().substring(0,2));
+				Frame.panelTable.removeAll();
+				int Numero1 = Integer.parseInt(PanelIngDatos.NumValores.getText().toString());
 				Frame.Datos = new String[Numero1][2];
 				for(int Fila = 0; Fila < Frame.Datos.length; Fila++)
 				{
