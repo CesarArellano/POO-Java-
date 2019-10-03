@@ -86,4 +86,41 @@ public class Calcular
         Md = Array[Pos];
       System.out.println("Mediana: "+Md);
     }
+    public void Moda()
+    {
+      int Mda=0, Validar=0, Pos=0;
+      for(int i = 0; i<Frequency.length; i++)
+      {
+        if(Frequency[i]>Mda)
+        {
+          Mda = Frequency[i];
+          Pos = i;
+        }
+      }
+      for(int i = 0; i<Frequency.length; i++)
+      {
+        if(Mda == Frequency[i])
+          Validar += 1;
+      }
+      if(Validar == 1)
+        System.out.println("La moda es: "+ NewArray[Pos]);
+      else if (Validar ==2)
+        System.out.println("La serie de datos es bimodal");
+      else if (Validar > 2)
+        System.out.println("La serie de datos es multimodal");
+    }
+    public void Desviacion(int Cont)
+    {
+      double Desviacion, Sumatoria=0,Cv,Raiz;
+      for(int i = 0; i < Cont; i++)
+      {
+        Sumatoria += (Math.pow(NewArray[i] - Media,2)) * Frequency[i];
+      }
+
+      Raiz = Sumatoria / NewArray.length;
+      Desviacion = Math.sqrt(Raiz);
+      Cv = (Desviacion / Media)*100;
+      System.out.println("La desviacion estándar es: "+ Desviacion);
+      System.out.println("El coeficiente de variación es: "+ Cv);
+    }
 }

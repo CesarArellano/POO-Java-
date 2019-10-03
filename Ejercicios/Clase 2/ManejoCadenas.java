@@ -2,7 +2,7 @@ public class ManejoCadenas{
   public void manejarCadenas(){
     String palabra = "uno";
     String palabrados = "dos";
-    String palabratres = "tres";Convertrir
+    String palabratres = "tres";
     System.out.println(palabra+" "+palabrados+" "+palabratres);
     int numero =13;
     int numerodos = 14;
