@@ -9,14 +9,14 @@ import javax.swing.SwingConstants;
 public class PanelIngDatos extends JPanel
 {
 	static JLabel Texto;
-	static JTextField Integral;
+	static JTextField Entrada;
 
 	PanelIngDatos()
 	{
 		setLayout(new GridLayout(1,2));
-    Texto = new JLabel("Ingrese ecuación (2°)",SwingConstants.CENTER);
-    Integral = new JTextField("",15);
-    add(Texto);
-		add(Integral);
+	    Texto = new JLabel("Ingrese ecuación (2°)",SwingConstants.CENTER);
+	    Entrada = new JTextField("",15);
+	    add(Texto);
+		add(Entrada);
 	}
 }

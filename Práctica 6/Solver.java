@@ -3,7 +3,7 @@ public class Solver
   double a,Area;
   public double Funcion(double x)
   {
-    return (Math.pow(x,4))+2;
+    return 3*(Math.pow(x,2))+4*(Math.pow(x,1))+3;
   }
   public void Aproximacion(double Xi)
   {
