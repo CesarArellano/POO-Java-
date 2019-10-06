@@ -1,10 +1,11 @@
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-public class EventosRadio implements ActionListener
+public class ManejadorEventos implements ActionListener
 {
 	static int[] Coeficientes;
 	static int[] Exponentes;
@@ -12,7 +13,7 @@ public class EventosRadio implements ActionListener
 	static double Evaluacion;
 	public void actionPerformed(ActionEvent Evento)
 	{
-		if(PanelRadioButton.CalcularIntegral.isSelected())
+		if(PanelButton.CalcularIntegral.isSelected())
 		{
 			try
 			{
@@ -42,7 +43,7 @@ public class EventosRadio implements ActionListener
 				JOptionPane.showMessageDialog(null,"Error en algún parámetro","Error de Entrada",JOptionPane.ERROR_MESSAGE);
 			}
 		}
-		else if(PanelRadioButton.EvaluarEnPunto.isSelected())
+		else if(PanelButton.EvaluarEnPunto.isSelected())
 		{
 			try
 			{
@@ -59,11 +60,13 @@ public class EventosRadio implements ActionListener
 
 					Frame.panelTable.updateUI();
 					Frame.panelTable.repaint();
+					Frame.panelTable.setBackground(Color.orange);
 					Frame.Tabla = new JTable(Frame.Datos,Frame.NombreColumnas);
 
 					// Importante para ver el encabezado
 
 					JScrollPane tableContainer = new JScrollPane(Frame.Tabla);
+					tableContainer.getViewport().setBackground(new Color(22, 181, 241));
 					Frame.panelTable.add(tableContainer);
 				}
 				else
@@ -76,7 +79,7 @@ public class EventosRadio implements ActionListener
 				JOptionPane.showMessageDialog(null,"Error en algún parámetro","Error de Entrada",JOptionPane.ERROR_MESSAGE);
 			}
 		}
-    else if(PanelRadioButton.EvaluarEnIntervalo.isSelected())
+    else if(PanelButton.EvaluarEnIntervalo.isSelected())
 		{
 			try
 			{
@@ -108,6 +111,7 @@ public class EventosRadio implements ActionListener
 					// Importante para ver el encabezado
 
 					JScrollPane tableContainer = new JScrollPane(Frame.Tabla);
+					tableContainer.getViewport().setBackground(new Color(22, 181, 241));
 					Frame.panelTable.add(tableContainer);
 				}
 				else
@@ -119,6 +123,10 @@ public class EventosRadio implements ActionListener
 			{
 				JOptionPane.showMessageDialog(null,"Error en algún parámetro","Error de Entrada",JOptionPane.ERROR_MESSAGE);
 			}
+		}
+		else if(Evento.getSource() == PanelIngDatos.LimpiarCampo)
+		{
+			PanelIngDatos.Entrada.setText("");
 		}
 	}
   public int ExtraerFuncion()
