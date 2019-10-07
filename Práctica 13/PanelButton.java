@@ -16,7 +16,7 @@ public class PanelButton extends JPanel
 	PanelButton()
 	{
 		setLayout(new GridLayout(2,3));
-		setBackground(new Color(22, 109, 211));
+		setBackground(new Color(20, 102, 175));
 		Texto = new JLabel("¿Qué desea hacer?", SwingConstants.CENTER);
 	    Texto.setForeground(Color.white);
 	    add(new JLabel(""));

@@ -32,7 +32,7 @@ public class Frame extends JFrame
        this.add(Opciones);
        panelTable = new JPanel();
        panelTable.setLayout(new BorderLayout(10,10));
-       panelTable.setBackground(new Color(22, 181, 241));
+       panelTable.setBackground(new Color(20, 102, 175));
        this.add(panelTable);
        //Eventos
        ManejadorEventos Manejador = new ManejadorEventos();

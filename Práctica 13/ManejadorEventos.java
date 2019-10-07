@@ -66,7 +66,7 @@ public class ManejadorEventos implements ActionListener
 					// Importante para ver el encabezado
 
 					JScrollPane tableContainer = new JScrollPane(Frame.Tabla);
-					tableContainer.getViewport().setBackground(new Color(22, 181, 241));
+					tableContainer.getViewport().setBackground(new Color(20, 102, 175));
 					Frame.panelTable.add(tableContainer);
 				}
 				else
@@ -111,7 +111,7 @@ public class ManejadorEventos implements ActionListener
 					// Importante para ver el encabezado
 
 					JScrollPane tableContainer = new JScrollPane(Frame.Tabla);
-					tableContainer.getViewport().setBackground(new Color(22, 181, 241));
+					tableContainer.getViewport().setBackground(new Color(20, 102, 175));
 					Frame.panelTable.add(tableContainer);
 				}
 				else
@@ -147,7 +147,10 @@ public class ManejadorEventos implements ActionListener
 			if((Temp.charAt(TempLong)) == 'x')
 			{
 				Coeficientes[i] = Integer.parseInt(Temp.substring(0,TempLong));
-				Exponentes[i] = Integer.parseInt(Temp.substring(TempLong+1,TempLong+2));
+				if((Temp.charAt(TempLong+1)) == '²')
+					Exponentes[i] = 2;
+				if((Temp.charAt(TempLong+1)) == '¹')
+					Exponentes[i] = 1;
 				if(Exponentes[i] == 2 || Exponentes[i] == 1)	
 				{
 					System.out.println("Exponente: "+Exponentes[i]);

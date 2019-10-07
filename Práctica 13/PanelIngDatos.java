@@ -17,7 +17,7 @@ public class PanelIngDatos extends JPanel
 	PanelIngDatos()
 	{
 		setLayout(null);
-       	setBackground(new Color(244, 86, 79));
+       	setBackground(new Color(221, 24, 24));
        	JLabel EtiquetaEncabezado = new JLabel();
        	Icon Encabezado = new ImageIcon(getClass().getResource("encabezado2.png"));
 	    EtiquetaEncabezado.setText("");
