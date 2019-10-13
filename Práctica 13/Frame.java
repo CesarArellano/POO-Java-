@@ -36,9 +36,10 @@ public class Frame extends JFrame
        this.add(panelTable);
        //Eventos
        ManejadorEventos Manejador = new ManejadorEventos();
-       PanelIngDatos.LimpiarCampo.addActionListener(Manejador);
+       ManejadorEventos2 Manejador2 = new ManejadorEventos2();
        PanelButton.CalcularIntegral.addActionListener(Manejador);
        PanelButton.EvaluarEnPunto.addActionListener(Manejador);
-       PanelButton.EvaluarEnIntervalo.addActionListener(Manejador);       
+       PanelButton.EvaluarEnIntervalo.addActionListener(Manejador);      
+       PanelIngDatos.LimpiarCampo.addActionListener(Manejador2); 
     }
 }

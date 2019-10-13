@@ -43,7 +43,7 @@ public class ManejadorEventos implements ActionListener
 				JOptionPane.showMessageDialog(null,"Error en algún parámetro","Error de Entrada",JOptionPane.ERROR_MESSAGE);
 			}
 		}
-		else if(PanelButton.EvaluarEnPunto.isSelected())
+		if(PanelButton.EvaluarEnPunto.isSelected())
 		{
 			try
 			{
@@ -79,7 +79,7 @@ public class ManejadorEventos implements ActionListener
 				JOptionPane.showMessageDialog(null,"Error en algún parámetro","Error de Entrada",JOptionPane.ERROR_MESSAGE);
 			}
 		}
-    else if(PanelButton.EvaluarEnIntervalo.isSelected())
+     	if(PanelButton.EvaluarEnIntervalo.isSelected())
 		{
 			try
 			{
@@ -123,11 +123,7 @@ public class ManejadorEventos implements ActionListener
 			{
 				JOptionPane.showMessageDialog(null,"Error en algún parámetro","Error de Entrada",JOptionPane.ERROR_MESSAGE);
 			}
-		}
-		else if(Evento.getSource() == PanelIngDatos.LimpiarCampo)
-		{
-			PanelIngDatos.Entrada.setText("");
-		}
+		}		
 	}
   public int ExtraerFuncion()
   {

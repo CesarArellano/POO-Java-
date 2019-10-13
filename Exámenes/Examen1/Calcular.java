@@ -21,7 +21,7 @@ public class Calcular
   public double ObtenerResultado(int NumOrdenados[], double Percentil)
   {
     double Posicion;
-    Posicion = ((60*Percentil)/100);
+    Posicion = (double) ((60*Percentil)/100);
     System.out.println(Posicion);
     if(Posicion%1==0)
     {
