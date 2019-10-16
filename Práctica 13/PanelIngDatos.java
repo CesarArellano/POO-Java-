@@ -25,19 +25,19 @@ public class PanelIngDatos extends JPanel
     	EtiquetaEncabezado.setHorizontalTextPosition(SwingConstants.CENTER);
     	EtiquetaEncabezado.setVerticalTextPosition(SwingConstants.CENTER);
 	    //(x,y,width,height) -> esquina superior izquierda
-		EtiquetaEncabezado.setBounds(100,22,120,30);
+		EtiquetaEncabezado.setBounds(85,30,120,30);
 	   	
 	    Texto = new JLabel("Ingrese ecuación",SwingConstants.CENTER);
 	    Texto.setForeground(Color.white);
-	    Texto.setBounds(55,60,120,30);
+	    Texto.setBounds(40,80,120,30);
 	    Texto2 = new JLabel("Ejemplo: +1x²-5x¹+12",SwingConstants.CENTER);
 	    Texto2.setForeground(Color.white);
-	    Texto2.setBounds(200,22,180,30);
+	    Texto2.setBounds(195,30,180,30);
 	    Entrada = new JTextField("",15);
-	    Entrada.setBounds(212,60,160,30);
+	    Entrada.setBounds(202,80,165,30);
 
 	    LimpiarCampo = new JButton("Borrar Campo");
-	    LimpiarCampo.setBounds(390,60,160,30);
+	    LimpiarCampo.setBounds(385,80,175,30);
 
 	    add(EtiquetaEncabezado);
 	    add(Texto2);	    

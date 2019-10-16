@@ -60,7 +60,6 @@ public class ManejadorEventos implements ActionListener
 
 					Frame.panelTable.updateUI();
 					Frame.panelTable.repaint();
-					Frame.panelTable.setBackground(Color.orange);
 					Frame.Tabla = new JTable(Frame.Datos,Frame.NombreColumnas);
 
 					// Importante para ver el encabezado

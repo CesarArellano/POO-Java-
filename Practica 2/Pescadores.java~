@@ -1,8 +1,0 @@
-import javax.swing.JOptionPane;
-public class Pescadores{
-  public void Calcular(int Pesc, int Peces){
-    int Total = Peces/Pesc;
-    int Faltan =  Peces%Pesc;
-    JOptionPane.showMessageDialog(null,"A cada pescador le tocan: "+Total+" Peces\n"+"Sobran:"+Faltan,"",JOptionPane.INFORMATION_MESSAGE);
-  }
-}

@@ -18,7 +18,7 @@ public class Frame extends JFrame
     public Frame()
     {
        super("Integral Calculator");
-       setSize(580,350);
+       setSize(580,500);
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        setResizable(false);
        setIconImage(new ImageIcon(getClass().getResource("icono.png")).getImage());
@@ -28,11 +28,12 @@ public class Frame extends JFrame
        IngDatos.setBorder(new EmptyBorder(10,10,10,10));
        this.add(IngDatos);
        PanelButton Opciones = new PanelButton();
-       Opciones.setBorder(new EmptyBorder(20,20,20,15));
+       Opciones.setBorder(new EmptyBorder(5,25,25,25));
        this.add(Opciones);
        panelTable = new JPanel();
        panelTable.setLayout(new BorderLayout(10,10));
        panelTable.setBackground(new Color(20, 102, 175));
+       panelTable.setBorder(new EmptyBorder(0,25,25,25));
        this.add(panelTable);
        //Eventos
        ManejadorEventos Manejador = new ManejadorEventos();
