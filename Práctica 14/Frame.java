@@ -22,8 +22,7 @@ public class Frame extends JFrame
        setLayout(new GridLayout(1,1));
        PanelForm Formulario = new PanelForm();
        this.add(Formulario);
-       /*ManejadorEventos Manejador = new ManejadorEventos();
-       PanelButton.CalcularIntegral.addActionListener(Manejador);
-      */
+       ManejadorEventos Manejador = new ManejadorEventos();
+       PanelForm.Guardar.addActionListener(Manejador);
     }
 }
