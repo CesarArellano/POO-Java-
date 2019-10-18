@@ -13,7 +13,8 @@ public class PanelForm extends JPanel
 	static JLabel EncabezadoA,EncabezadoB,Diagonal,NomMedico,FechaEvaluacion,Sexo,NomPaciente,FechaNac,Edad,Anios,Direccion,TF,TM,Pregunta1,Anios2,Meses,Pregunta2,EstadoCivil,Pregunta3,Nota,NoEstudio,Primaria,Secundaria,Preparatoria,Licenciatura,Postgrado,Pregunta4,Pregunta5,Pregunta6,Pregunta7;
 	static JTextField NombreMedico,ApellidoPatMedico,ApellidoMatMedico,DiaEvaluacion,MesEvaluacion,AnioEvaluacion,NomPac,ApPatPac,ApMatPac,DiaNac,MesNac,AnioNac,Calle,NumExterior,NumInterior,Zona,Del_Mun,CP,TelefonoF,TelefonoM,AniosVivienda,MesesVivienda,EntidadOrigen;
 	static JRadioButton Masculino,Femenino,Casado,UnionL,Soltero,Separado,Divorciado,Viudo,NoSabe,Num,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Num10,Num11,Num12,Num13,Num14,Num15,Num16,Num17,Num18,Num19,Num20,Num21,Num22,Num23,Num24,Num25,OpcionS1,OpcionS2,OpcionN1,OpcionN2,Desempleado,JubiladoS,JubiladoC,Profesionista,Jefe,AmaCasa,Ninguna,Catolica,Cristiana,Judio;
-	static JButton Guardar;
+	static ButtonGroup GrupoSexo,GrupoEstadoCivil,GrupoEstudios,GrupoLeer,GrupoEscribir,GrupoEmpleo,GrupoReligion;
+	static JButton Guardar;	
 
 	PanelForm()
 	{
@@ -98,17 +99,17 @@ public class PanelForm extends JPanel
 	    Direccion.setFont(Fuente2);
 	    Direccion.setBounds(25,205,300,25);
 	    Calle = new JTextField("Calle",50);
-	    Calle.setBounds(140,205,250,25);
+	    Calle.setBounds(140,205,400,25);
 	    NumExterior = new JTextField("No. Exterior",4);
-	    NumExterior.setBounds(410,205,80,25);
+	    NumExterior.setBounds(560,205,80,25);
 	    NumInterior = new JTextField("No. Interior",4);
-	    NumInterior.setBounds(510,205,80,25);
+	    NumInterior.setBounds(660,205,80,25);
 	    Zona = new JTextField("Zona",4);
-	    Zona.setBounds(610,205,250,25);
+	    Zona.setBounds(760,205,50,25);
 	    Del_Mun = new JTextField("Delegación/Municipio",50);
-	    Del_Mun.setBounds(880,205,150,25);
+	    Del_Mun.setBounds(830,205,150,25);
 	    CP = new JTextField("Código Postal",50);
-	    CP.setBounds(1050,205,90,25);
+	    CP.setBounds(1000,205,100,25);
 
 	    TF = new JLabel("B.6 Teléfono Fijo (casa):");
 	    TF.setForeground(Color.white);
@@ -390,18 +391,18 @@ public class PanelForm extends JPanel
 	    Guardar = new JButton("Guardar Información");
 	    Guardar.setBounds(940,625,220,35);
 
-	    ButtonGroup GrupoSexo = new ButtonGroup();
-	    ButtonGroup GrupoEstadoCivil = new ButtonGroup();
-	    ButtonGroup GrupoEstudios = new ButtonGroup();
-	    ButtonGroup GrupoLeer = new ButtonGroup();
-	    ButtonGroup GrupoEscribir = new ButtonGroup();
-	    ButtonGroup GrupoEmpleo = new ButtonGroup();
-	    ButtonGroup GrupoReligion = new ButtonGroup();
+	    GrupoSexo = new ButtonGroup();
+	   	GrupoEstadoCivil = new ButtonGroup();
+	    GrupoEstudios = new ButtonGroup();
+	    GrupoLeer = new ButtonGroup();
+	    GrupoEscribir = new ButtonGroup();
+	    GrupoEmpleo = new ButtonGroup();
+	    GrupoReligion = new ButtonGroup();
 
 	    GrupoSexo.add(Masculino);
 	    GrupoSexo.add(Femenino);
-			Masculino.setActionCommand("Hombre");
-			Femenino.setActionCommand("Mujer");
+		Masculino.setActionCommand("Hombre");
+		Femenino.setActionCommand("Mujer");
 
 	    GrupoEstadoCivil.add(Casado);
 	    GrupoEstadoCivil.add(UnionL);
@@ -410,6 +411,13 @@ public class PanelForm extends JPanel
 	    GrupoEstadoCivil.add(Divorciado);
 	    GrupoEstadoCivil.add(Viudo);
 	    GrupoEstadoCivil.add(NoSabe);
+	    Casado.setActionCommand("Casado");
+		UnionL.setActionCommand("Unión Libre");
+		Soltero.setActionCommand("Soltero");
+		Separado.setActionCommand("Separado");
+		Divorciado.setActionCommand("Divorciado");
+		Viudo.setActionCommand("Viudo");
+		NoSabe.setActionCommand("No sabe / no responde");
 
 	    GrupoEstudios.add(Num);
 	    GrupoEstudios.add(Num1);
@@ -437,12 +445,42 @@ public class PanelForm extends JPanel
 	    GrupoEstudios.add(Num23);
 	    GrupoEstudios.add(Num24);
 	    GrupoEstudios.add(Num25);
+	    Num.setActionCommand("0");
+		Num1.setActionCommand("1");
+		Num2.setActionCommand("2");
+		Num3.setActionCommand("3");
+		Num4.setActionCommand("4");
+		Num5.setActionCommand("5");
+		Num6.setActionCommand("6");
+		Num7.setActionCommand("7");
+		Num8.setActionCommand("8");
+		Num9.setActionCommand("9");
+		Num10.setActionCommand("10");
+		Num11.setActionCommand("11");
+		Num12.setActionCommand("12");
+		Num13.setActionCommand("13");
+		Num14.setActionCommand("14");
+		Num15.setActionCommand("15");
+		Num16.setActionCommand("16");
+		Num17.setActionCommand("17");
+		Num18.setActionCommand("18");
+		Num19.setActionCommand("19");
+		Num20.setActionCommand("20");
+		Num21.setActionCommand("21");
+		Num22.setActionCommand("22");
+		Num23.setActionCommand("23");
+		Num24.setActionCommand("24");
+		Num25.setActionCommand("25");
 
 	    GrupoLeer.add(OpcionS1);
 	    GrupoLeer.add(OpcionN1);
+	    OpcionS1.setActionCommand("Si");
+		OpcionN1.setActionCommand("No");
 
 	    GrupoEscribir.add(OpcionS2);
 	    GrupoEscribir.add(OpcionN2);
+	    OpcionS2.setActionCommand("Si");
+		OpcionN2.setActionCommand("No");
 
 	    GrupoEmpleo.add(Desempleado);
 	    GrupoEmpleo.add(JubiladoS);
@@ -450,11 +488,21 @@ public class PanelForm extends JPanel
 	    GrupoEmpleo.add(Profesionista);
 	    GrupoEmpleo.add(Jefe);
 	    GrupoEmpleo.add(AmaCasa);
+	    Desempleado.setActionCommand("Desempleado");
+		JubiladoS.setActionCommand("Jubilado sin pensión");
+		JubiladoC.setActionCommand("Jubilado con pensión");
+		Profesionista.setActionCommand("Profesionista independiente");
+		Jefe.setActionCommand("Patrón(a), Jefe(a) o empresario(a)");
+		AmaCasa.setActionCommand("Ama de casa");
 
 	    GrupoReligion.add(Ninguna);
 	    GrupoReligion.add(Catolica);
 	    GrupoReligion.add(Cristiana);
 	    GrupoReligion.add(Judio);
+	    Ninguna.setActionCommand("Ninguna");
+		Catolica.setActionCommand("Católica");
+		Cristiana.setActionCommand("Cristiana");
+		Judio.setActionCommand("Judío");
 
 	    add(EncabezadoA);
 	    add(NomMedico);
