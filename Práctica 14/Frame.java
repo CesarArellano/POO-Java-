@@ -15,10 +15,10 @@ public class Frame extends JFrame
     public Frame()
     {
        super("Formulario");
-       setSize(1200,700);
+       setSize(1200,730);
        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        setResizable(false);
-       setIconImage(new ImageIcon(getClass().getResource("icono.png")).getImage());
+       setIconImage(new ImageIcon(getClass().getResource("clinica.png")).getImage());
        setLayout(new GridLayout(1,1));
        PanelForm Formulario = new PanelForm();
        this.add(Formulario);
