@@ -1,12 +1,58 @@
-González
-Portillo
-Raúl
-Arellano
-Velásquez
-César Mauricio
-Privada Lucca Casa 6, Prolongación Ahuehuete, Villa del Real
-Tecámac
-55749
-55776183
-5567879498
-Ciudad de México
+Paciente: 1
+Nombre Médico: Raúl
+Apellido Paterno Médico: González
+Apellido Materno Médico: Portillo
+Nombre Paciente: César Mauricio
+Apellido Paterno Paciente: Arellano
+Apellido Materno Paciente: Velásquez
+Género: Hombre
+Calle: Calle
+Zona: 5
+Delegación/Municipio: Tecámac
+Código Postal: 55749
+Teléfono Fijo: 55776183
+Teléfono Móvil: 5567879498
+Estado de Origen: Ciudad de México
+Estado Civil: Soltero
+Sabe Leer: Si
+Sabe Escribir: Si
+Empleo Actual: Patrón(a), Jefe(a) o empresario(a)
+Religion: Ninguna
+Fecha Evaluación: 21/10/2019
+Fecha Nacimiento: 15/2/1958
+Edad: 61
+Número Exterior: 9
+Número Interior: 10
+Años de Vivir en Domicilio: 30
+Meses de Vivir en Domicilio: 12
+Años de Estudio: 0
+
+Paciente: 2
+Nombre Médico: Alfredo
+Apellido Paterno Médico: Ortega
+Apellido Materno Médico: Jiménez
+Nombre Paciente: Mauricio
+Apellido Paterno Paciente: Flores
+Apellido Materno Paciente: Gerónimo
+Género: Hombre
+Calle: Calle
+Zona: 5
+Delegación/Municipio: Tecámac
+Código Postal: 55749
+Teléfono Fijo: 55776183
+Teléfono Móvil: 5567879498
+Estado de Origen: Ciudad de México
+Estado Civil: Soltero
+Sabe Leer: Si
+Sabe Escribir: Si
+Empleo Actual: Patrón(a), Jefe(a) o empresario(a)
+Religion: Ninguna
+Fecha Evaluación: 21/10/2019
+Fecha Nacimiento: 15/2/1958
+Edad: 61
+Número Exterior: 9
+Número Interior: 10
+Años de Vivir en Domicilio: 30
+Meses de Vivir en Domicilio: 12
+Años de Estudio: 0
+

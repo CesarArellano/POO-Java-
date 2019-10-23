@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 public class PanelForm extends JPanel
 {
-	static JLabel EncabezadoA,EncabezadoB,Diagonal,NomMedico,FechaEvaluacion,Sexo,NomPaciente,FechaNac,Edad,Anios,Direccion,TF,TM,Pregunta1,Anios2,Meses,Pregunta2,EstadoCivil,Pregunta3,Nota,NoEstudio,Primaria,Secundaria,Preparatoria,Licenciatura,Postgrado,Pregunta4,Pregunta5,Pregunta6,Pregunta7;
+	static JLabel EncabezadoA,EncabezadoB,Diagonal,NomMedico,FechaEvaluacion,Sexo,NomPaciente,FechaNac,Edad,Anios,Direccion,TF,TM,Pregunta1,Anios2,Meses,Pregunta2,EstadoCivil,Pregunta3,Nota,NoEstudio,Primaria,Secundaria,Preparatoria,Licenciatura,Postgrado,Pregunta4,Pregunta5,Pregunta6,Pregunta7,Dia,Mes,Anio,MesesVida,AniosVida,TextoApPat,TextoApMat,TextoNom;
 	static JTextField NombreMedico,ApellidoPatMedico,ApellidoMatMedico,DiaEvaluacion,MesEvaluacion,AnioEvaluacion,NomPac,ApPatPac,ApMatPac,DiaNac,MesNac,AnioNac,Calle,NumExterior,NumInterior,Zona,Del_Mun,CP,TelefonoF,TelefonoM,AniosVivienda,MesesVivienda,EntidadOrigen;
 	static JRadioButton Masculino,Femenino,Casado,UnionL,Soltero,Separado,Divorciado,Viudo,NoSabe,Num,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Num10,Num11,Num12,Num13,Num14,Num15,Num16,Num17,Num18,Num19,Num20,Num21,Num22,Num23,Num24,Num25,OpcionS1,OpcionS2,OpcionN1,OpcionN2,Desempleado,JubiladoS,JubiladoC,Profesionista,Jefe,AmaCasa,Ninguna,Catolica,Cristiana,Judio;
 	static ButtonGroup GrupoSexo,GrupoEstadoCivil,GrupoEstudios,GrupoLeer,GrupoEscribir,GrupoEmpleo,GrupoReligion;
@@ -33,7 +33,7 @@ public class PanelForm extends JPanel
     	EtiquetaImagen.setHorizontalTextPosition(SwingConstants.CENTER);
     	EtiquetaImagen.setVerticalTextPosition(SwingConstants.CENTER);
 	    //(x,y,width,height) -> esquina superior izquierda
-		EtiquetaImagen.setBounds(590,10,40,40);
+		EtiquetaImagen.setBounds(580,10,40,40);
 
 	    EncabezadoA = new JLabel("A. Datos de Identificación del encuestador");
 	    EncabezadoA.setForeground(Color.white);
@@ -44,22 +44,51 @@ public class PanelForm extends JPanel
 	    NomMedico.setForeground(Color.white);
 	    NomMedico.setFont(Fuente2);
 	    NomMedico.setBounds(25,80,300,25);
-	    ApellidoPatMedico = new JTextField("Apellido Paterno",15);
-	    ApellidoPatMedico.setBounds(280,80,150,25);
-	    ApellidoMatMedico = new JTextField("Apellido Materno",15);
+	    ApellidoPatMedico = new JTextField("",15);
+	    ApellidoPatMedico.setBounds(280,80,150,25);	    
+	    TextoApPat = new JLabel("Apellido Paterno");
+	    TextoApPat.setForeground(Color.white);
+	    TextoApPat.setFont(Fuente2);
+	    TextoApPat.setBounds(280,100,50,25);
+
+	    ApellidoMatMedico = new JTextField("",15);
 	    ApellidoMatMedico.setBounds(450,80,150,25);
-	    NombreMedico = new JTextField("Nombre(s)",15);
+
+	    TextoApMat = new JLabel("Apellido Materno");
+	    TextoApMat.setForeground(Color.white);
+	    TextoApMat.setFont(Fuente2);
+	    TextoApMat.setBounds(450,100,50,25);
+
+	    NombreMedico = new JTextField("",15);
 	    NombreMedico.setBounds(620,80,150,25);
+	    TextoApMat = new JLabel("Nombre(s)");
+	    TextoApMat.setForeground(Color.white);
+	    TextoApMat.setFont(Fuente2);
+	    TextoApMat.setBounds(620,100,50,25);
+	    
 	    FechaEvaluacion = new JLabel("Fecha de Evaluación:");
 	    FechaEvaluacion.setForeground(Color.white);
 	    FechaEvaluacion.setFont(Fuente2);
 	    FechaEvaluacion.setBounds(790,80,300,25);
-	    DiaEvaluacion = new JTextField("dd",2);
+	    DiaEvaluacion = new JTextField("",2);
 	    DiaEvaluacion.setBounds(950,80,50,25);
-	    MesEvaluacion = new JTextField("mm",2);
+	    MesEvaluacion = new JTextField("",2);
 	    MesEvaluacion.setBounds(1020,80,50,25);
-	    AnioEvaluacion = new JTextField("aaaa",4);
+	    AnioEvaluacion = new JTextField("",4);
 	    AnioEvaluacion.setBounds(1090,80,50,25);
+	    Dia = new JLabel("dd");
+	    Dia.setForeground(Color.white);
+	    Dia.setFont(Fuente2);
+	    Dia.setBounds(950,100,50,25);
+	    Mes = new JLabel("mm");
+	    Mes.setForeground(Color.white);
+	    Mes.setFont(Fuente2);
+	    Mes.setBounds(1020,100,50,25);
+	    Anio = new JLabel("aaaa");
+	    Anio.setForeground(Color.white);
+	    Anio.setFont(Fuente2);
+	    Anio.setBounds(1090,100,50,25);
+
 
 	    EncabezadoB = new JLabel("B. Cédula de identificación del paciente");
 	    EncabezadoB.setForeground(Color.white);
@@ -70,7 +99,7 @@ public class PanelForm extends JPanel
 	    NomPaciente.setForeground(Color.white);
 	    NomPaciente.setFont(Fuente2);
 	    NomPaciente.setBounds(25,155,100,25);
-	    ApPatPac = new JTextField("Apellido Paterno",15);
+	    ApPatPac = new JTextField("",15);
 	    ApPatPac.setBounds(130,155,150,25);
 	    ApMatPac = new JTextField("Apellido Materno",15);
 	    ApMatPac.setBounds(300,155,150,25);
@@ -141,17 +170,25 @@ public class PanelForm extends JPanel
 	    Pregunta1.setForeground(Color.white);
 	    Pregunta1.setFont(Fuente2);
 	    Pregunta1.setBounds(25,295,500,25);
-	    AniosVivienda = new JTextField("Años",50);
-	    AniosVivienda.setBounds(540,295,50,25);
-	    MesesVivienda = new JTextField("Meses",50);
-	    MesesVivienda.setBounds(610,295,50,25);
+	    AniosVivienda = new JTextField("",50);
+	    AniosVivienda.setBounds(590,295,50,25);
+	    MesesVivienda = new JTextField("",50);
+	    MesesVivienda.setBounds(710,295,50,25);
+	    AniosVida = new JLabel("Años:");
+	    AniosVida.setForeground(Color.white);
+	    AniosVida.setFont(Fuente);
+	    AniosVida.setBounds(540,295,50,25);
+	    MesesVida = new JLabel("Meses:");
+	    MesesVida.setForeground(Color.white);
+	    MesesVida.setFont(Fuente);
+	    MesesVida.setBounds(650,295,50,25);
 
 	    Pregunta2 = new JLabel("B.9 Estado/Entidad de Origen");
 	    Pregunta2.setForeground(Color.white);
 	    Pregunta2.setFont(Fuente2);
-	    Pregunta2.setBounds(680,295,300,25);
+	    Pregunta2.setBounds(780,295,300,25);
 	    EntidadOrigen = new JTextField("",50);
-	    EntidadOrigen.setBounds(890,295,150,25);
+	    EntidadOrigen.setBounds(990,295,150,25);
 
 	    EstadoCivil = new JLabel("B.10 Estado Civil:");
 	    EstadoCivil.setForeground(Color.white);
@@ -522,10 +559,16 @@ public class PanelForm extends JPanel
 	    add(ApellidoPatMedico);
 	    add(ApellidoMatMedico);
 	    add(NombreMedico);
+	    add(TextoApPat);
+	    add(TextoApMat);
+	    add(TextoNom);
 	    add(FechaEvaluacion);
 	    add(DiaEvaluacion);
 	    add(MesEvaluacion);
 	    add(AnioEvaluacion);
+	    add(Dia);
+	    add(Mes);
+	    add(Anio);
 	    add(EncabezadoB);
 	    add(NomPaciente);
 	    add(ApPatPac);
@@ -553,6 +596,8 @@ public class PanelForm extends JPanel
 	    add(Pregunta1);
 	    add(AniosVivienda);
 	    add(MesesVivienda);
+	    add(AniosVida);
+	    add(MesesVida);
 	    add(Pregunta2);
 	    add(EntidadOrigen);
 	    add(EstadoCivil);

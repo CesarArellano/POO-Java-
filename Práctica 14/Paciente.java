@@ -1,9 +1,9 @@
 public class Paciente
 {
-  private String NombreMedico, ApellidoPatMedico, ApellidoMatMedico,NombrePaciente, ApellidoPatPaciente, ApellidoMatPaciente,Sexo,Calle,Delegacion,TelefonoF,TelefonoM,EdoDeOrigen,EstadoCivil,Leer,Escribir,EmpleoActual,Religion;
+  private String NombreMedico, ApellidoPatMedico, ApellidoMatMedico,NombrePaciente, ApellidoPatPaciente, ApellidoMatPaciente,Sexo,Calle,Delegacion,CodigoPostal,TelefonoF,TelefonoM,EdoDeOrigen,EstadoCivil,Leer,Escribir,EmpleoActual,Religion;
   private int DiaEvaluacion, MesEvaluacion, AnioEvaluacion, DiaNac, MesNac, AnioNac, Edad,NumExterior,NumInterior,Zona,AniosVivienda,MesesVivienda,AniosEstudio;
 
-  public Paciente(String NombreMedico,String ApellidoPatMedico, String ApellidoMatMedico, String NombrePaciente,String ApellidoPatPaciente, String ApellidoMatPaciente, String Sexo, String Calle, String Delegacion, String TelefonoF, String TelefonoM, String EdoDeOrigen, String EstadoCivil, String Leer, String Escribir,String EmpleoActual, String Religion,int DiaEvaluacion, int MesEvaluacion, int AnioEvaluacion,int DiaNac, int MesNac, int AnioNac, int Edad, int NumExterior, int NumInterior, int Zona, int AniosVivienda, int MesesVivienda, int AniosEstudio)
+  public Paciente(String NombreMedico,String ApellidoPatMedico, String ApellidoMatMedico, String NombrePaciente,String ApellidoPatPaciente, String ApellidoMatPaciente, String Sexo, String Calle, String Delegacion,String CodigoPostal, String TelefonoF, String TelefonoM, String EdoDeOrigen, String EstadoCivil, String Leer, String Escribir,String EmpleoActual, String Religion,int DiaEvaluacion, int MesEvaluacion, int AnioEvaluacion,int DiaNac, int MesNac, int AnioNac, int Edad, int NumExterior, int NumInterior, int Zona, int AniosVivienda, int MesesVivienda, int AniosEstudio)
   {
     this.NombreMedico = NombreMedico;
     this.ApellidoPatMedico = ApellidoPatMedico;
@@ -15,6 +15,7 @@ public class Paciente
     this.Calle = Calle;
     this.Zona = Zona;
     this.Delegacion = Delegacion;
+    this.CodigoPostal = CodigoPostal;
     this.TelefonoF = TelefonoF;
     this.TelefonoM = TelefonoM;
     this.EdoDeOrigen = EdoDeOrigen;
@@ -39,7 +40,7 @@ public class Paciente
   public String Impresion()
   {
     String Contenido;
-    Contenido = "Nombre Médico: "+NombreMedico+",Apellido Paterno Médico: "+ApellidoPatMedico+",Apellido Materno Médico: "+ApellidoMatMedico+",Nombre Paciente: "+NombrePaciente+",Apellido Paterno Paciente: "+ApellidoPatPaciente+",Apellido Materno Paciente: "+ApellidoMatPaciente+",Género: "+Sexo+",Calle: "+Calle+",Zona: "+Zona+",Delegación/Municipio: "+Delegacion+",Teléfono Fijo: "+TelefonoF+",Teléfono Móvil: "+TelefonoM+",Estado de Origen: "+EdoDeOrigen+",Estado Civil: "+EstadoCivil+",Sabe Leer: "+Leer+",Sabe Escribir: "+Escribir+",Empleo Actual: "+EmpleoActual+",Religion: "+Religion+",Fecha Evaluación: "+DiaEvaluacion+"/"+MesEvaluacion+"/"+AnioEvaluacion+",Fecha Nacimiento: "+DiaNac+"/"+MesNac+"/"+AnioNac+",Edad: "+Edad+",Número Exterior: "+NumExterior+",Número Interior: "+NumInterior+",Años de Vivir en Domicilio: "+AniosVivienda+",Meses de Vivir en Domicilio: "+MesesVivienda+",Años de Estudio: "+AniosEstudio;
+    Contenido = "Nombre Médico: "+NombreMedico+"\nApellido Paterno Médico: "+ApellidoPatMedico+"\nApellido Materno Médico: "+ApellidoMatMedico+"\nNombre Paciente: "+NombrePaciente+"\nApellido Paterno Paciente: "+ApellidoPatPaciente+"\nApellido Materno Paciente: "+ApellidoMatPaciente+"\nGénero: "+Sexo+"\nCalle: "+Calle+"\nZona: "+Zona+"\nDelegación/Municipio: "+Delegacion+"\nCódigo Postal: "+CodigoPostal+"\nTeléfono Fijo: "+TelefonoF+"\nTeléfono Móvil: "+TelefonoM+"\nEstado de Origen: "+EdoDeOrigen+"\nEstado Civil: "+EstadoCivil+"\nSabe Leer: "+Leer+"\nSabe Escribir: "+Escribir+"\nEmpleo Actual: "+EmpleoActual+"\nReligion: "+Religion+"\nFecha Evaluación: "+DiaEvaluacion+"/"+MesEvaluacion+"/"+AnioEvaluacion+"\nFecha Nacimiento: "+DiaNac+"/"+MesNac+"/"+AnioNac+"\nEdad: "+Edad+"\nNúmero Exterior: "+NumExterior+"\nNúmero Interior: "+NumInterior+"\nAños de Vivir en Domicilio: "+AniosVivienda+"\nMeses de Vivir en Domicilio: "+MesesVivienda+"\nAños de Estudio: "+AniosEstudio+"\n";
     return Contenido;
    }
 }

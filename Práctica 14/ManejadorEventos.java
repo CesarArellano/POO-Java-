@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
+import java.io.*;
 
 public class ManejadorEventos implements ActionListener
 {
@@ -19,7 +20,7 @@ public class ManejadorEventos implements ActionListener
 		{
 			try
 			{
-				int FlagNomMedico, FlagApPatMedico, FlagApMatMedico, FlagNomPac, FlagApPatPac, FlagApMatPac, FlagDel_Mun, FlagCP, FlagTF, FlagTM, FlagEntidad, FlagNac, FlagEval;
+				int FlagNomMedico, FlagApPatMedico, FlagApMatMedico, FlagNomPac, FlagApPatPac, FlagApMatPac, FlagDel_Mun, FlagCP, FlagTF, FlagTM, FlagEntidad, FlagNac, FlagEval,FlagAniosdeEstudio=0,FlagMesesVivienda=0,FlagAniosVivienda=0;
 				//Obtener Fecha Actual
 				Date Fecha = new Date(); 
 				SimpleDateFormat ObjetoFormato = new SimpleDateFormat("dd"); 
@@ -91,7 +92,7 @@ public class ManejadorEventos implements ActionListener
 				
 				//Validando Fechas
 				FlagEval = ValidacionFechas(DiaEvaluacion,MesEvaluacion,AnioEvaluacion,DiaActual,MesActual,AnioActual);
-				FlagNac = ValidacionFechas(DiaNac,MesNac,AnioNac,DiaActual,MesActual,AnioActual);
+				FlagNac = ValidacionFechas(DiaNac,MesNac,AnioNac,DiaEvaluacion,MesEvaluacion,AnioEvaluacion);
 				
 				if(FlagEval == 1)
 					JOptionPane.showMessageDialog(null,"Error, la fecha de evaluacion es incorrecta"," Error de Entrada", JOptionPane.ERROR_MESSAGE);
@@ -100,9 +101,9 @@ public class ManejadorEventos implements ActionListener
 					JOptionPane.showMessageDialog(null,"Error, la fecha de nacimiento es incorrecta"," Error de Entrada", JOptionPane.ERROR_MESSAGE);
 				else
 				{
-					EdadPaciente = ObtenerEdadPaciente(DiaNac,MesNac,AnioNac,DiaActual,MesActual,AnioActual);
-					if(EdadPaciente<=60)
-						JOptionPane.showMessageDialog(null,"Error, edad del paciente debe ser superior a los 60 años","Error Edad", JOptionPane.ERROR_MESSAGE);
+					EdadPaciente = ObtenerEdadPaciente(DiaNac,MesNac,AnioNac,DiaEvaluacion,MesEvaluacion,AnioEvaluacion);
+					if(EdadPaciente<=60  || EdadPaciente>120)
+						JOptionPane.showMessageDialog(null,"Error, edad del paciente debe ser superior a los 60 años o es mayor de 120 años","Error Edad", JOptionPane.ERROR_MESSAGE);
 				}
 
 				//No necesitan ser verificados.
@@ -119,17 +120,42 @@ public class ManejadorEventos implements ActionListener
 				String Escribir = PanelForm.GrupoEscribir.getSelection().getActionCommand();
 				String Empleo = PanelForm.GrupoEmpleo.getSelection().getActionCommand();
 				String Religion = PanelForm.GrupoReligion.getSelection().getActionCommand();
-
-				if (FlagNomMedico == 0 && FlagApPatMedico == 0 && FlagApMatMedico == 0 && FlagNomPac==0 && FlagApPatPac==0 && FlagApMatPac==0 && FlagDel_Mun == 0 && FlagCP == 0 && FlagTF == 0 && FlagTM == 0 && FlagEntidad == 0 && FlagNac == 0 && FlagEval == 0 && EdadPaciente > 60)
+				
+				if(MesesVivienda < 0 || MesesVivienda > 12)
 				{
+					FlagMesesVivienda = 1;
+					JOptionPane.showMessageDialog(null,"Error, el mes ingresado no puede ser superior a 12 meses","Error de Entrada", JOptionPane.ERROR_MESSAGE);
+				}
+				if(AniosVivienda < 0)
+				{
+					FlagAniosVivienda = 1;
+					JOptionPane.showMessageDialog(null,"Error, el año no puede ser negativo","Error de Entrada", JOptionPane.ERROR_MESSAGE);
+				}
+
+
+				if(AniosEstudios !=0)
+				{
+					if(Leer.equals("Si") && Escribir.equals("Si"))
+						FlagAniosdeEstudio = 0;
+					else
+					{
+						FlagAniosdeEstudio = 1;
+						JOptionPane.showMessageDialog(null,"Error, debe saber leer y escribir para el nivel académico seleccionado","Error de Entrada", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+
+				if (FlagNomMedico == 0 && FlagApPatMedico == 0 && FlagApMatMedico == 0 && FlagNomPac==0 && FlagApPatPac==0 && FlagApMatPac==0 && FlagDel_Mun == 0 && FlagCP == 0 && FlagTF == 0 && FlagTM == 0 && FlagEntidad == 0 && FlagNac == 0 && FlagEval == 0 && FlagAniosdeEstudio == 0 && FlagMesesVivienda ==0 && FlagAniosVivienda == 0 && (EdadPaciente > 60 && EdadPaciente <= 120)) 
+				{
+					PrintWriter pw = new PrintWriter("InfoPrueba.txt");
 					PanelForm.Edad.setText("B.4 Edad: "+EdadPaciente+" Años");
 					JOptionPane.showMessageDialog(null,"Se agregó con éxito a (el/la) paciente: "+NomPac+" al ArrayList","Mensaje Usuario", JOptionPane.INFORMATION_MESSAGE);
-					ListaPacientes.add(new Paciente(NombreMedico,ApellidoPatMedico,ApellidoMatMedico,NomPac,ApPatPac, ApMatPac, Sexo, Calle, Del_Mun, TelefonoFijo, TelefonoMovil, EntidadOrigen, EstadoCivil, Leer, Escribir, Empleo, Religion, DiaEvaluacion, MesEvaluacion, AnioEvaluacion, DiaNac, MesNac, AnioNac, EdadPaciente, NumExterior, NumInterior, Zona, AniosVivienda, MesesVivienda, AniosEstudios));
+					ListaPacientes.add(new Paciente(NombreMedico,ApellidoPatMedico,ApellidoMatMedico,NomPac,ApPatPac, ApMatPac, Sexo, Calle, Del_Mun, CP, TelefonoFijo, TelefonoMovil, EntidadOrigen, EstadoCivil, Leer, Escribir, Empleo, Religion, DiaEvaluacion, MesEvaluacion, AnioEvaluacion, DiaNac, MesNac, AnioNac, EdadPaciente, NumExterior, NumInterior, Zona, AniosVivienda, MesesVivienda, AniosEstudios));
 					for (int i = 0; i<ListaPacientes.size();i++)
 					{
-						System.out.println("Paciente: "+(i+1));
-						System.out.println(ListaPacientes.get(i).Impresion());
+						pw.println("Paciente: "+(i+1));
+						pw.println(ListaPacientes.get(i).Impresion());
 					}					
+					pw.close();
 				}
 			}
 			catch(Exception e)
