@@ -49,7 +49,7 @@ public class PanelForm extends JPanel
 	    TextoApPat = new JLabel("Apellido Paterno");
 	    TextoApPat.setForeground(Color.white);
 	    TextoApPat.setFont(Fuente2);
-	    TextoApPat.setBounds(280,100,50,25);
+	    TextoApPat.setBounds(280,100,300,25);
 
 	    ApellidoMatMedico = new JTextField("",15);
 	    ApellidoMatMedico.setBounds(450,80,150,25);
@@ -57,14 +57,14 @@ public class PanelForm extends JPanel
 	    TextoApMat = new JLabel("Apellido Materno");
 	    TextoApMat.setForeground(Color.white);
 	    TextoApMat.setFont(Fuente2);
-	    TextoApMat.setBounds(450,100,50,25);
+	    TextoApMat.setBounds(450,100,300,25);
 
 	    NombreMedico = new JTextField("",15);
 	    NombreMedico.setBounds(620,80,150,25);
-	    TextoApMat = new JLabel("Nombre(s)");
-	    TextoApMat.setForeground(Color.white);
-	    TextoApMat.setFont(Fuente2);
-	    TextoApMat.setBounds(620,100,50,25);
+	    TextoNom = new JLabel("Nombre(s)");
+	    TextoNom.setForeground(Color.white);
+	    TextoNom.setFont(Fuente2);
+	    TextoNom.setBounds(620,100,300,25);
 	    
 	    FechaEvaluacion = new JLabel("Fecha de Evaluación:");
 	    FechaEvaluacion.setForeground(Color.white);
