@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 public class PanelForm extends JPanel
 {
-	static JLabel EncabezadoA,EncabezadoB,Diagonal,NomMedico,FechaEvaluacion,Sexo,NomPaciente,FechaNac,Edad,Anios,Direccion,TF,TM,Pregunta1,Anios2,Meses,Pregunta2,EstadoCivil,Pregunta3,Nota,NoEstudio,Primaria,Secundaria,Preparatoria,Licenciatura,Postgrado,Pregunta4,Pregunta5,Pregunta6,Pregunta7,Dia,Mes,Anio,MesesVida,AniosVida,TextoApPat,TextoApMat,TextoNom;
+	static JLabel EncabezadoA,EncabezadoB,Diagonal,NomMedico,FechaEvaluacion,Sexo,NomPaciente,FechaNac,Edad,Anios,Direccion,TF,TM,Pregunta1,Anios2,Meses,Pregunta2,EstadoCivil,Pregunta3,Nota,NoEstudio,Primaria,Secundaria,Preparatoria,Licenciatura,Postgrado,Pregunta4,Pregunta5,Pregunta6,Pregunta7,Dia,Mes,Anio,MesesVida,AniosVida,TextoApPat,TextoApMat,TextoNom,TextoCalle,TextoNumExt,TextoNumInt,TextoZona,TextoDelg,TextoCP;
 	static JTextField NombreMedico,ApellidoPatMedico,ApellidoMatMedico,DiaEvaluacion,MesEvaluacion,AnioEvaluacion,NomPac,ApPatPac,ApMatPac,DiaNac,MesNac,AnioNac,Calle,NumExterior,NumInterior,Zona,Del_Mun,CP,TelefonoF,TelefonoM,AniosVivienda,MesesVivienda,EntidadOrigen;
 	static JRadioButton Masculino,Femenino,Casado,UnionL,Soltero,Separado,Divorciado,Viudo,NoSabe,Num,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Num10,Num11,Num12,Num13,Num14,Num15,Num16,Num17,Num18,Num19,Num20,Num21,Num22,Num23,Num24,Num25,OpcionS1,OpcionS2,OpcionN1,OpcionN2,Desempleado,JubiladoS,JubiladoC,Profesionista,Jefe,AmaCasa,Ninguna,Catolica,Cristiana,Judio;
 	static ButtonGroup GrupoSexo,GrupoEstadoCivil,GrupoEstudios,GrupoLeer,GrupoEscribir,GrupoEmpleo,GrupoReligion;
@@ -99,7 +99,7 @@ public class PanelForm extends JPanel
 	    NomPaciente.setForeground(Color.white);
 	    NomPaciente.setFont(Fuente2);
 	    NomPaciente.setBounds(25,155,100,25);
-	    ApPatPac = new JTextField("",15);
+	    ApPatPac = new JTextField("Apellido Paterno",15);
 	    ApPatPac.setBounds(130,155,150,25);
 	    ApMatPac = new JTextField("Apellido Materno",15);
 	    ApMatPac.setBounds(300,155,150,25);
@@ -123,11 +123,11 @@ public class PanelForm extends JPanel
 	    FechaNac.setForeground(Color.white);
 	    FechaNac.setFont(Fuente2);
 	    FechaNac.setBounds(25,190,300,25);
-	    DiaNac = new JTextField("dd",2);
+	    DiaNac = new JTextField("",2);
 	    DiaNac.setBounds(215,190,50,25);
-	    MesNac = new JTextField("mm",2);
+	    MesNac = new JTextField("",2);
 	    MesNac.setBounds(285,190,50,25);
-	    AnioNac = new JTextField("aaaa",4);
+	    AnioNac = new JTextField("",4);
 	    AnioNac.setBounds(355,190,50,25);
 
 	    Edad = new JLabel("B.4 Edad: ___ Años");
@@ -139,18 +139,44 @@ public class PanelForm extends JPanel
 	    Direccion.setForeground(Color.white);
 	    Direccion.setFont(Fuente2);
 	    Direccion.setBounds(25,225,300,25);
-	    Calle = new JTextField("Calle",50);
-	    Calle.setBounds(140,225,400,25);
-	    NumExterior = new JTextField("No. Exterior",4);
-	    NumExterior.setBounds(560,225,80,25);
-	    NumInterior = new JTextField("No. Interior",4);
-	    NumInterior.setBounds(660,225,80,25);
-	    Zona = new JTextField("Zona",4);
-	    Zona.setBounds(760,225,50,25);
-	    Del_Mun = new JTextField("Delegación/Municipio",50);
-	    Del_Mun.setBounds(830,225,150,25);
-	    CP = new JTextField("Código Postal",50);
-	    CP.setBounds(1000,225,100,25);
+	    Calle = new JTextField("",50);
+	    Calle.setBounds(185,225,300,25);
+	    TextoCalle = new JLabel("Calle:");
+	    TextoCalle.setForeground(Color.white);
+	    TextoCalle.setFont(Fuente2);
+	    TextoCalle.setBounds(135,225,40,25);
+	    NumExterior = new JTextField("",4);
+	    NumExterior.setBounds(590,225,80,25);
+	    TextoNumExt = new JLabel("No. Exterior:");
+	    TextoNumExt.setForeground(Color.white);
+	    TextoNumExt.setFont(Fuente2);
+	    TextoNumExt.setBounds(500,225,100,25);
+	    NumInterior = new JTextField("",4);
+	    NumInterior.setBounds(690,225,80,25);
+	    TextoNumInt = new JLabel("No. Interior");
+	    TextoNumInt.setForeground(Color.white);
+	    TextoNumInt.setFont(Fuente2);
+	    TextoNumInt.setBounds(690,250,100,25);
+	    Zona = new JTextField("",4);
+	    Zona.setBounds(790,225,50,25);
+	    TextoZona = new JLabel("Zona");
+	    TextoZona.setForeground(Color.white);
+	    TextoZona.setFont(Fuente2);
+	    TextoZona.setBounds(790,250,100,25);
+	    Del_Mun = new JTextField("",50);
+	    Del_Mun.setBounds(860,225,150,25);
+	    TextoDelg = new JLabel("Delegación/Municipio");
+	    TextoDelg.setForeground(Color.white);
+	    TextoDelg.setFont(Fuente2);
+	    TextoDelg.setBounds(860,250,150,25);
+	    CP = new JTextField("",50);
+	    CP.setBounds(1030,225,110,25);
+	    TextoCP = new JLabel("Código Postal");
+	    TextoCP.setForeground(Color.white);
+	    TextoCP.setFont(Fuente2);
+	    TextoCP.setBounds(1030,250,100,25);
+
+	    
 
 	    TF = new JLabel("B.6 Teléfono Fijo (casa):");
 	    TF.setForeground(Color.white);
@@ -584,11 +610,17 @@ public class PanelForm extends JPanel
 	    add(Edad);
 	    add(Direccion);
 	    add(Calle);
+	    add(TextoCalle);
 	    add(NumExterior);
+	    add(TextoNumExt);
 	    add(NumInterior);
+	    add(TextoNumInt);
 	    add(Zona);
+	    add(TextoZona);
 	    add(Del_Mun);
+	    add(TextoDelg);
 	    add(CP);
+	    add(TextoCP);
 	    add(TF);
 	    add(TelefonoF);
 	    add(TM);
