@@ -62,7 +62,7 @@ public class Conectar
 		while(rs.next())
 		{
 			//Número de campo de la tabla;
-			System.out.println(rs.getInt("id")+""+rs.getString(2)+""+rs.getString(3)+""+rs.getString(4)+"");
+		    System.out.println(rs.getInt("ID")+""+rs.getString(2)+""+rs.getString(3)+""+rs.getString(4)+""+rs.getString(5)+"");
 		}
 	}
 }
