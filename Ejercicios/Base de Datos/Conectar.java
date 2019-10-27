@@ -15,7 +15,7 @@ public class Conectar
 	static final String user = "root";
 	static final String password = "admin";
 	//nombre de la base de datos a conectar;
-	static final String url = "jdbc:mysql://localhost/test";
+	static final String url = "jdbc:mysql://localhost/test?useSSL=false";
 
 	public Conectar()
 	{
@@ -62,7 +62,7 @@ public class Conectar
 		while(rs.next())
 		{
 			//Número de campo de la tabla;
-		    System.out.println(rs.getInt("ID")+""+rs.getString(2)+""+rs.getString(3)+""+rs.getString(4)+""+rs.getString(5)+"");
+		    System.out.println(rs.getInt("ID")+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4)+" "+rs.getString(5));
 		}
 	}
 }

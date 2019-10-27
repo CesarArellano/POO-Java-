@@ -150,7 +150,7 @@ public class PanelForm extends JPanel
 	    TextoNumExt = new JLabel("No. Exterior:");
 	    TextoNumExt.setForeground(Color.white);
 	    TextoNumExt.setFont(Fuente2);
-	    TextoNumExt.setBounds(500,225,100,25);
+	    TextoNumExt.setBounds(490,225,100,25);
 	    NumInterior = new JTextField("",4);
 	    NumInterior.setBounds(690,225,80,25);
 	    TextoNumInt = new JLabel("No. Interior");
@@ -207,7 +207,7 @@ public class PanelForm extends JPanel
 	    MesesVida = new JLabel("Meses:");
 	    MesesVida.setForeground(Color.white);
 	    MesesVida.setFont(Fuente);
-	    MesesVida.setBounds(650,295,50,25);
+	    MesesVida.setBounds(650,295,80,25);
 
 	    Pregunta2 = new JLabel("B.9 Estado/Entidad de Origen");
 	    Pregunta2.setForeground(Color.white);
