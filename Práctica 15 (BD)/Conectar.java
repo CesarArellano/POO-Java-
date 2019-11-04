@@ -17,7 +17,7 @@ public class Conectar
     static final String password = "admin";
     //nombre de la base de datos a conectar;
     static final String url = "jdbc:mysql://localhost/Clinica?useSSL=false";
-    static int UltimoIDMedico, UltimoIDPaciente;
+    static int UltimoID;
     static ResultSet LastID;
 
     public Conectar()
@@ -62,7 +62,7 @@ public class Conectar
         try
         {
             PreparedStatement InsertarDatosMedico = conn.prepareStatement("INSERT INTO Medico VALUES(null,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
-            PreparedStatement InsertarDatosPaciente = conn.prepareStatement("INSERT INTO Paciente VALUES(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement InsertarDatosPaciente = conn.prepareStatement("INSERT INTO Paciente VALUES(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             PreparedStatement InsertarDomicilio = conn.prepareStatement("INSERT INTO Domicilio VALUES(?,?,?,?,?,?,?,?,?)");
 
             // Inserto parámetros de medico al comando INSERT INTO;
@@ -76,10 +76,10 @@ public class Conectar
             // Obtener último ID del Medico para pasarselo como referencia al nuevo paciente.
             LastID = InsertarDatosMedico.getGeneratedKeys();
             if (LastID != null && LastID.next()) 
-                UltimoIDMedico = LastID.getInt(1);
+                UltimoID = LastID.getInt(1);
 
             // Inserto parámetros de paciente al comando INSERT INTO;
-            InsertarDatosPaciente.setInt(1,UltimoIDMedico);
+            InsertarDatosPaciente.setInt(1,UltimoID);
             InsertarDatosPaciente.setString(2,ManejadorEventos.NomPac);
             InsertarDatosPaciente.setString(3,ManejadorEventos.ApPatPac);
             InsertarDatosPaciente.setString(4,ManejadorEventos.ApMatPac);
@@ -100,13 +100,8 @@ public class Conectar
             // Agrego registro a la tabla Paciente en la base de datos;
             InsertarDatosPaciente.executeUpdate();
 
-            // Obtener último ID del paciente para pasarselo como referencia al domicilio.
-            LastID = InsertarDatosPaciente.getGeneratedKeys();
-            if (LastID != null && LastID.next()) 
-                UltimoIDPaciente = LastID.getInt(1);
-
             // Inserto parámetros de domicilio al comando INSERT INTO;
-            InsertarDomicilio.setInt(1,UltimoIDPaciente);
+            InsertarDomicilio.setInt(1,UltimoID);
             InsertarDomicilio.setString(2,ManejadorEventos.Calle);
             InsertarDomicilio.setInt(3,ManejadorEventos.NumExterior);
             InsertarDomicilio.setInt(4,ManejadorEventos.NumInterior);
